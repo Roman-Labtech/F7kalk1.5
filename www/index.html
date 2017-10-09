@@ -40,14 +40,7 @@
     </script> 
     	    
     <!--Phonecall1 function-->	    
-     	    <script type="text/javascript" charset="utf-8">
-				
-      	   function phonecall1()
-		{
-           window.plugins.CallNumber.callNumber(onSuccess, onError,88313367613);
-		   };
-			   </script>
-			   
+		   
 			   
     
        <script type="text/javascript" charset="utf-8" src="js/cordova_plugins.js">
@@ -115,14 +108,7 @@ if (n == 1) navigator.app.exitApp();
 
       
 
-   	<script>
 
-  function phonecall(){
-	  
-	  alert("call");
-         //  window.plugins.CallNumber.callNumber(onSuccess, onError, 88313367613);
-        }
-  </script>
    	
    
 	  <li class="accordion-item">
@@ -146,7 +132,7 @@ if (n == 1) navigator.app.exitApp();
       </li>
     
       <li class="accordion-item">
-               <a href="tel:88313367613" onclick="phonecall1()" class="graylink">
+               <a href="tel:88313367613" onclick="phonecall()" class="graylink">
 					<div class="item-inner">
 						<div class="item-title mainlinks panel_white">		 
 						  <i class="material-icons icon-settings">call</i>
@@ -155,17 +141,26 @@ if (n == 1) navigator.app.exitApp();
 					</div>
     		   </a>  
          <br>
-          <a href="tel:88313367613" onclick="phonecall()">ddd</a>  
+          <a href="tel:88313367613" onclick="phonecall2()">ddd</a>  
       </li>
    	   	 <li class="accordion-item">
 			<div class="item-inner">
-			  <a href="question.html" data-ignore-cache="true" class="graylink close-panel">
+			  <a href="question.html" onclick="phonecall()" data-ignore-cache="true" class="graylink close-panel">
 				<div class="item-title mainlinks panel_white">		 
 		          <i class="material-icons icon-settings">help</i>
 		          Справка</div>   
 		      </a>      
         </div>
     </li>
+       	<li class="accordion-item">        
+		<div class="item-inner">
+			  <a href="#" data-ignore-cache="true" class="graylink" onClick="buttonweb()">
+				<div class="item-title mainlinks panel_white">		 
+		          <i class="material-icons icon-settings">cancel</i> Выход      
+                </div>
+             </a> 
+        </div> 
+   	</li>
    	<li class="accordion-item">        
 		<div class="item-inner">
 			  <a href="#" data-ignore-cache="true" class="graylink" onClick="exitFromApp()">
@@ -457,7 +452,7 @@ if (n == 1) navigator.app.exitApp();
 						 <a href="#" class="button button-fill color-green" name="stop3" onclick="StartStop3()">Старт/стоп</a>
 					</div>
 					  <div class="col-50">
-						 <a href="#" class="button button-fill color-red" name="clear3" onclick="ClearСlock()">Сброс</a>            
+						 <a href="#" class="button button-fill color-red" name="clear3" onclick="ClearСlock3()">Сброс</a>            
 					  </div>
 					</div>
 					<br>
