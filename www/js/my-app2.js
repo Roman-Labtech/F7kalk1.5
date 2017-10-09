@@ -1,3 +1,4 @@
+
 // Initialize your app
 var myApp = new Framework7({
     animateNavBackIcon:true
@@ -96,6 +97,9 @@ function ClearСlock2()
 	document.MyForm2.stopwatch2.value='00:00:00'; 
 	
 } 
+function ClearСlock3() {
+document.MyForm3.stopwatch3.value='00:00:00';
+};
 //функция для старта секундомера
      var timerbig,timebig2,timebig3;
 
@@ -396,8 +400,56 @@ var resultx=1;
 
 
 
+function phonecall()
+{
+ window.plugins.CallNumber.callNumber(onSuccess, onError,88313367613, true);
+}
+
+function onSuccess(result){
+
+  console.log("Success:"+result);
+}
+
+function onError(result) {
+  console.log("Error:"+result);
+}
+
+
+
 
 document.addEventListener("backbutton", onBackKeyDown, false);
+
+
+
+function onBackKeyDown(e) {
+   e.preventDefault();
+   onBackKeyDown();
+};
+
+
+
+function buttonweb(){
+  document.getElementById("openBrowser").addEventListener("click", openBrowser);  
+};
+function phonecall()
+{
+ window.plugins.CallNumber.callNumber(onSuccess, onError,88313367613, true);
+};
+
+function onSuccess(result){
+
+  console.log("Success:"+result);
+};
+function onError(result) {
+  console.log("Error:"+result);
+};
+
+
+
+
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+
 
 function onBackKeyDown(e) {
    e.preventDefault();
@@ -437,5 +489,4 @@ function openBrowser() {
       console.log('Browser is closed...')
    }
 }
-
 
