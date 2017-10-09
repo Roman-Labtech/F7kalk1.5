@@ -412,12 +412,9 @@ function buttonweb(){
 
 
 function openBrowser() {
+var ref = cordova.InAppBrowser.open('http://lab-shop.ru', '_blank', 'location=yes');
+   window.open = cordova.ref.show();
 	
-   var url = 'http://lab-shop.ru';
-   var target = '_blank';
-   var options = "location = yes"
-   var ref = cordova.InAppBrowser.open(url, target, options);
-   
    ref.addEventListener('loadstart', loadstartCallback);
    ref.addEventListener('loadstop', loadstopCallback);
    ref.addEventListener('loadloaderror', loaderrorCallback);
@@ -441,3 +438,10 @@ function openBrowser() {
 }
 
 
+function web1()
+{
+      var url= "https://blog.knoldus.com/";
+      var browserRef = window.cordova.InAppBrowser.open(url, "_self", "location=no", "toolbar=no");
+      browserRef.addEventListener("exit", (event) => {
+          return navigator["app"].exitApp();
+        });};
