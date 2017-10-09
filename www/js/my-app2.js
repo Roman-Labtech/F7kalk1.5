@@ -81,19 +81,19 @@ function ClearСlock()
 { 
 	clearTimeout(clocktimer); 
 	h=1;m=1;tm=1;s=0;ts=0;ms=0; 
-	init=0;
-	readout='00:00:00'; 
-	document.MyForm.stopwatch.value=readout; 
-	
+	init=0;	
 } 
+function ClearСlock1() {
+document.MyForm.stopwatch.value='00:00:00';
+};
 
 function ClearСlock2() 
 { 
 	//clearTimeout(clocktimer); 
 	//h=1;m=1;tm=1;s=0;ts=0;ms=0; 
 	//init=0;
-	readout='00:00:00'; 
-	document.MyForm2.stopwatch2.value=readout; 
+	//readout='00:00:00'; 
+	document.MyForm2.stopwatch2.value='00:00:00'; 
 	
 } 
 //функция для старта секундомера
@@ -406,15 +406,16 @@ function onBackKeyDown(e) {
 
 
 function buttonweb(){
-
   document.getElementById("openBrowser").addEventListener("click", openBrowser);  
 }
 
 
 function openBrowser() {
-var ref = cordova.InAppBrowser.open('http://lab-shop.ru', '_blank', 'location=yes');
-   window.open = cordova.ref.show();
-	
+   var url = 'http://lab-shop.ru';
+   var target = '_blank';
+   var options = "location = yes"
+   var ref = cordova.InAppBrowser.open(url, target, options);
+   
    ref.addEventListener('loadstart', loadstartCallback);
    ref.addEventListener('loadstop', loadstopCallback);
    ref.addEventListener('loadloaderror', loaderrorCallback);
@@ -438,10 +439,3 @@ var ref = cordova.InAppBrowser.open('http://lab-shop.ru', '_blank', 'location=ye
 }
 
 
-function web1()
-{
-      var url= "https://blog.knoldus.com/";
-      var browserRef = window.cordova.InAppBrowser.open(url, "_self", "location=no", "toolbar=no");
-      browserRef.addEventListener("exit", (event) => {
-          return navigator["app"].exitApp();
-        });};
